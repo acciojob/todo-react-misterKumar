@@ -33,7 +33,7 @@ function TodoList() {
       </div>
       <ul>
         {tasks.map((task, index) => (
-          <li className='Task one' key={index}>
+          <li  key={index} className={index === 0 ? 'Task one' : 'Task two'}>
             {task}
             <button  onClick={() => removeTask(index)}>Remove</button>
           </li>
