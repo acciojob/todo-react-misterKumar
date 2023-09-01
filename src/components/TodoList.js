@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
 
 function TodoList() {
-  const [tasks, setTasks] = useState([]); // State to store the list of tasks
-  const [newTask, setNewTask] = useState(''); // State to store the new task input
-
-  // Function to add a new task to the list
+  const [tasks, setTasks] = useState([]); 
+  const [newTask, setNewTask] = useState(''); 
+ 
   const addTask = () => {
     if (newTask.trim() === '') {
-      // Do not add empty tasks
+     
       return;
     }
     setTasks([...tasks, newTask]);
-    setNewTask(''); // Clear the input field
+    setNewTask(''); 
   };
 
-  // Function to remove a task by index
+ 
   const removeTask = (index) => {
     const updatedTasks = tasks.filter((_, i) => i !== index);
     setTasks(updatedTasks);
@@ -34,7 +33,7 @@ function TodoList() {
       </div>
       <ul>
         {tasks.map((task, index) => (
-          <li  key={index}>
+          <li className='Task one' key={index}>
             {task}
             <button  onClick={() => removeTask(index)}>Remove</button>
           </li>
