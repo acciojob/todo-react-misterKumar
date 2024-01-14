@@ -1,5 +1,9 @@
-name: Acciojob score evaluation
-on: push
+name: Acciojob Tests
+
+on:
+ push:
+    branches: [ "main","master" ]
+
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -23,4 +27,4 @@ jobs:
         uses: acciojob/assignment-action@v0.0.2
         env:
           ACCIO_ASGMNT_ACTION_TOKEN: ${{ secrets.ACCIO_ASGMNT_ACTION_TOKEN }}
-      - run: echo "🍏 Score - ${{ steps.assignmentAction.outputs.totalScore}}/${{ steps.assignmentAction.outputs.totalScore }}"
+      - run: echo "🍏 Score - ${{ steps.assignmentAction.outputs.scoreReceived }}/${{ steps.assignmentAction.outputs.totalScore }}"
